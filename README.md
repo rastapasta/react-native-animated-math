@@ -1,0 +1,71 @@
+# react-native-animated-math
+
+[![npm version](https://badge.fury.io/js/react-native-animated-math.svg)](https://badge.fury.io/js/react-native-animated-math)
+![license](https://img.shields.io/github/license/rastapasta/react-native-animated-math.svg)
+
+An Animated API math extension - implementing Sinus, Cosinus, Tangens and others as AnimatedNodes.
+
+All calculations are implemented based on chained
+
+* Animated.add
+* Animated.divide
+* Animated.multiply
+* Animated.modulo
+
+**Readme is WIP**
+
+## Getting started
+
+Simply add it to your project by calling
+
+`$ react-native add react-native-animated-math`
+
+## Usage
+
+Simple example of using the `AnimatedMath` methods to realize a natively animated circular moving view:
+
+```js
+import { Animated } from 'react-native';
+import AnimatedMath from 'react-native-animated-math';
+
+class Rotator extends React.Component {
+  state = {
+    angle: new Animated.Value(0)
+  }
+
+  componentDidMount() {
+    Animated.timing(this.state.angle, {
+      toValue: 2*Math.PI,
+      duration: 4000,
+      useNativeDriver: true
+    }).start();
+  }
+
+  render() {
+    let {angle} = this.state,
+      radius = 130;
+
+    return (
+      <Animated.View style={{
+        position: 'absolute',
+        transform: [
+          {translateX: Animated.multiply(AnimatedMath.sinus(angle), radius)},
+          {translateY: Animated.multiply(AnimatedMath.cosinus(angle), -radius)},
+        ]
+      }]}/>
+    );
+  }
+}
+```
+
+## License
+
+#### The MIT License (MIT)
+
+Copyright (c) 2017 Michael Straßburger
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
