@@ -14,7 +14,7 @@
 import { Animated } from 'react-native';
 
 const
-  sinus = (
+  sin = (
     node: Animated | number
   ): Animated => {
     // Normalize the angle into the 'precise' range
@@ -34,15 +34,15 @@ const
     );
   },
 
-  cosinus = (
+  cos = (
     node: Animated | number
   ): Animated =>
-    sinus(Animated.add(Math.PI/2, node)),
+    sin(Animated.add(Math.PI/2, node)),
 
-  tangens = (
+  tan = (
     node: Animated | number
   ): Animated =>
-    Animated.divide(sinus(node), cosinus(node)),
+    Animated.divide(sin(node), cos(node)),
 
   pow = (
     node: Animated | number,
@@ -52,7 +52,7 @@ const
     times == 1 ? node :
     Animated.multiply(node, pow(node, Math.floor(times)-1)),
 
-  substract = (
+  subtract = (
     a: Animated | number,
     b: Animated | number
   ): Animated =>
@@ -76,9 +76,15 @@ const
   };
 
 export default {
-  sinus,
-  cosinus,
-  tangens,
+  sin,
+  cos,
+  tan,
   pow,
-  substract
+  subtract,
+
+  // Backward compatibility for previously bad namings
+  sinus: sin,
+  cosinus: cos,
+  tangens: tan,
+  substract: subtract
 };
