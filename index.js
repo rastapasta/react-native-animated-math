@@ -2,7 +2,7 @@
 * react-native-animated-math
 * https://github.com/rastapasta/react-native-animated-math
 *
-* Supplies mathematic logic and approximizations by combining
+* Supplies mathematic logic and approximations by combining
 *   Animated.add
 *   Animated.multiply
 *   Animated.divide
@@ -82,7 +82,7 @@ export default {
   pow,
   subtract,
 
-  // Backward compatibility for previously bad namings
+  // Backward compatibility for previous bad namings
   sinus: sin,
   cosinus: cos,
   tangens: tan,

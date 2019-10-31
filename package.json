@@ -1,7 +1,7 @@
 {
   "name": "react-native-animated-math",
-  "version": "0.1.0",
-  "description": "Animated API math extension - implements Sinus, Cosinus, Tangens and other as AnimatedNodes",
+  "version": "0.2.0",
+  "description": "Animated API math extension - implements sine, cosine, tangent as AnimatedNodes",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,9 +13,12 @@
   "keywords": [
     "react-native",
     "animated",
-    "cosinus",
-    "sinus",
-    "tangens"
+    "cos",
+    "sin",
+    "tan",
+    "cosine",
+    "sine",
+    "tangent"
   ],
   "author": "Michael Straßburger <codepoet@cpan.org>",
   "license": "MIT",

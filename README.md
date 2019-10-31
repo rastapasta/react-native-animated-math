@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/react-native-animated-math.svg)](https://badge.fury.io/js/react-native-animated-math)
 ![license](https://img.shields.io/github/license/rastapasta/react-native-animated-math.svg)
 
-An Animated API math extension - implementing Sinus, Cosinus, Tangens and others as AnimatedNodes.
+An Animated API math extension - implementing sine, cosine, tangent and others as AnimatedNodes.
 
 All calculations are implemented based on chained
 
@@ -12,7 +12,7 @@ All calculations are implemented based on chained
 * Animated.multiply
 * Animated.modulo
 
-**Readme is WIP**
+and representing animation nodes fully compatible with [Native Driver](https://facebook.github.io/react-native/blog/2017/02/14/using-native-driver-for-animated) driven animations.
 
 ## Getting started
 
@@ -49,8 +49,8 @@ class Rotator extends React.Component {
       <Animated.View style={{
         position: 'absolute',
         transform: [
-          {translateX: Animated.multiply(AnimatedMath.sinus(angle), radius)},
-          {translateY: Animated.multiply(AnimatedMath.cosinus(angle), -radius)},
+          {translateX: Animated.multiply(AnimatedMath.sin(angle), radius)},
+          {translateY: Animated.multiply(AnimatedMath.cos(angle), -radius)},
         ]
       }]}/>
     );
