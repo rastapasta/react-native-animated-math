@@ -21,15 +21,21 @@ const
     let angle = __normalize(node);
 
     // Taylor series approximation of sine curve near origin:
-    // sin x = x − x^3/3! + x^5/5! − x^7/7!
+    // sin x = x − x^3/3! + x^5/5! − x^7/7! + x^9/9! − x^11/11!
     return Animated.add(
       Animated.add(
         angle,
         Animated.divide(pow(angle, 3), -__factorial(3))
       ),
       Animated.add(
-        Animated.divide(pow(angle, 5), __factorial(5)),
-        Animated.divide(pow(angle, 7), -__factorial(7))
+        Animated.add(
+          Animated.divide(pow(angle, 5), __factorial(5)),
+          Animated.divide(pow(angle, 7), -__factorial(7))
+        ),
+        Animated.add(
+          Animated.divide(pow(angle, 9), __factorial(9)),
+          Animated.divide(pow(angle, 11), -__factorial(11))
+        )
       )
     );
   },
