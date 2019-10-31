@@ -3,6 +3,8 @@
 [![npm version](https://badge.fury.io/js/react-native-animated-math.svg)](https://badge.fury.io/js/react-native-animated-math)
 ![license](https://img.shields.io/github/license/rastapasta/react-native-animated-math.svg)
 
+<center><img width="50%" src="docs/example.gif"/></center>
+
 An Animated API math extension - implementing sine, cosine, tangent and others as AnimatedNodes.
 
 All calculations are implemented based on chained
