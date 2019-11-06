@@ -1,6 +1,6 @@
 # react-native-animated-math
 
-[![npm version](https://badge.fury.io/js/react-native-animated-math.svg)](https://badge.fury.io/js/react-native-animated-math)
+[![npm version](https://badge.fury.io/js/react-native-animated-math.svg)](https://badge.fury.io/js/react-native-animated-math) [![Greenkeeper badge](https://badges.greenkeeper.io/rastapasta/react-native-animated-math.svg)](https://greenkeeper.io/)
 ![license](https://img.shields.io/github/license/rastapasta/react-native-animated-math.svg)
 
 <center><img width="50%" src="docs/example.gif"/></center>
